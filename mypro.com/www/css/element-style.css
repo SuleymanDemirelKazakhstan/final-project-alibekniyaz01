@@ -1,0 +1,128 @@
+.body {
+	margin-top: 50px;
+}
+
+.title_element {
+	font-size: 25px;
+}
+
+.images {
+	margin-top: 50px;
+
+	width: 750px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.bigImage {
+	width: 745px;
+	height: 500px;
+}
+
+.main_images {
+	width: 120px;
+	height: 80px;
+
+	margin-right: 5px;
+	margin-bottom: 5px;
+
+	cursor: pointer;
+}
+
+.images_main {
+	width: 750px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+
+.body div {
+	display: flex;
+}
+
+.about_car {
+	position: relative;
+
+	margin-top: 50px;
+	width: 350px;
+	height: 550px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.pricee {
+	margin-top: 10px;
+
+	font-size: 25px;
+}
+
+.contente {
+	width: 300px;
+
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 10px;
+}
+
+.active {
+	border: 2px solid blue;
+}
+
+.interest {
+	width: 100%;
+
+	margin: 50px 0px;
+
+	text-align: center;
+}
+
+.interest_title {
+	margin-bottom: 20px;
+
+	width: 100%;
+
+	font-size: 25px;
+	font-weight: 400;
+
+	color: red;
+}
+
+.interest_car {
+	width: 1170px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.car:last-child {
+	margin-right: 0;
+	width: 100%;
+}
+
+.interest_img {
+	width: 250px;
+	height: 150px;
+}
+
+.interest_car_title {
+	width: 100%;
+}
+
+.interest_car_content {
+	max-width: 900px;
+
+	width: 20%;
+	margin-right: auto;
+}
+
+.interst_car_link {
+	cursor: pointer;
+
+	color: black;
+
+	text-decoration: none;
+}

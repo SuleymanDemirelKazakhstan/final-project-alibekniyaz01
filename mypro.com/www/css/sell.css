@@ -1,0 +1,23 @@
+.sell_content {
+	width: 100%;
+
+	margin: 20px 0;
+
+	border: 1px solid gray;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.select {
+	font-size: 20px;
+	width: 25%;
+
+	margin: 20px 0;
+}
+
+.option {
+}
+
