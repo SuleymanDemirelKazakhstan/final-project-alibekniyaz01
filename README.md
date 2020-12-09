@@ -1,1 +1,0 @@
-# final-project-alibekniyaz01

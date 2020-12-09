@@ -1,0 +1,181 @@
+body{
+    margin: 0;
+    font-size: 15px;
+    color: black;
+    line-height: 1.6;
+    font-family: 'Epilogue', sans-serif;
+    padding: 0;
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: relative;
+}
+
+*, 
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+/* Container*/
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    
+    margin: 0px auto;
+
+    /* border: 1px solid red; */
+}
+
+/* Header */
+.header{
+    background-color: whitesmoke;
+    flex: 0;
+    /* border: 3px solid blue; */
+}
+
+.header::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    
+
+    margin: 0 auto;
+
+    background-color: silver;
+}
+
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 70px;
+}
+
+
+
+
+.logo a img{
+    height: 90px;
+    margin-left: -28px;
+}
+
+.logo a img:hover{
+    opacity: 0.7;
+}
+
+/* Nav */
+
+.nav{
+    margin-top: 20px;;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav div{
+    display: inline-block;
+    margin-right: 50px;
+}
+
+/* .fav__icon a img{
+    height: 40px;
+} */
+
+.basket__icon a img{
+    height: 30px;  
+}
+
+/* .fav__icon, */
+.basket__icon{
+    position: relative;
+    
+}
+
+/* .fav__icon:hover, */
+.basket__icon:hover{
+    opacity: 0.6;
+}
+
+/* .count__fav, */
+.count__basket{
+    position: absolute;
+    background-color: blue;
+    color: white;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+
+    left: 30px;
+    bottom: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post_an_ad{
+    text-align: center;
+    background-color: rgba(255, 253, 253, 0.898);
+
+    border: 1px solid black;
+    border-radius: 6px;
+
+    width: 130px;
+
+    font-family:  Helvetica, Arial, sans-serif;
+    /* font-family: 'Epilogue', sans-serif; */
+    
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+    /* margin-right: 20px; */
+}
+
+.post_an_ad:hover{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 500px){
+    .post_an_ad span{
+        display: none;
+    }
+    .post_an_ad{
+        width: 30px;
+        height: 33px;
+    }
+    .btn{
+        margin-right: -50px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .logo{
+        margin-left: 20px;
+    }
+    .nav{
+        margin-right: 20px;
+    }
+
+    .text_cotegory{
+        margin-left: 20px;
+    }
+
+    .Content__Container{
+        padding: 0 20px;
+    }
+}
+           
+/* ----Nav */
+
+
+
+/* ----Header */
