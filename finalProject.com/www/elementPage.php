@@ -48,7 +48,7 @@
                         <button class="btn__addtobasket" onclick = "addBasket(this)"> <span id="bas">ADD TO BASKET</span>
                          <span class="arrow">&#8594;</span>
                         </button>
-                       
+                        <div class="alreadyInBasket">Already In Basket</div>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
     let basket = localStorage.getItem('basket');
     let id = <?php echo $res['id'];?>
 
-            console.log(id);
+            // console.log(id);
 
     if(basket){
         basket = JSON.parse(basket);
@@ -70,7 +70,8 @@
         for (let i = 0; i < basket.length; i++) {
                                         
             if(basket[i]["id"] == id){
-                document.querySelector("#bas").innerHTML = "Already in basket";
+                document.querySelector(".alreadyInBasket").style.display = "block";
+                document.querySelector(".btn__addtobasket").style.display = "none";
                 break;
             }
 
@@ -78,31 +79,69 @@
     }
     else if(!basket){
         basket = [];
-    }          
+    }  
+
+    <?php
+        $photos = mysqli_query($connection, "SELECT * FROM images WHERE product_id=".$id);
+        $photo = mysqli_fetch_assoc($photos);
+    ?>
+
+    let name = "<?php echo $res["name"];?>";
+    let price = <?php echo $res['price'];?>;
+    let bigIma = "<?php echo $photo["image_srces"]; ?>"; 
+    let arr = {"name": name, "id": id, "price": price, "image":bigIma};        
 
     function  addBasket(event){
+        let basket1 = localStorage.getItem('basket');
 
-        <?php
-            $photos = mysqli_query($connection, "SELECT * FROM images WHERE product_id=".$id);
-            $photo = mysqli_fetch_assoc($photos);
-        ?>
+     
 
-        let name = "<?php echo $res["name"];?>";
-        let price = <?php echo $res['price'];?>;
-        let bigIma = "<?php echo $photo["image_srces"] ?>"; 
+       
 
-        console.log(name);
-        console.log(price);
-        console.log(bigIma);
+        document.querySelector(".alreadyInBasket").style.display = "block";
+        document.querySelector(".btn__addtobasket").style.display = "none";
+        // console.log();
 
-        if (basket) {
-            let arr = {"name": name, "id": id, "price": price, "image":bigIma};
-            basket[basket.length] = arr;
-
-            localStorage.setItem("basket", JSON.stringify(basket));
+        if (basket1) {
+           basket1 = JSON.parse(basket1);
         }
-                                   
-    }     
+        else{
+            basket1 = [];
+        }
+
+        basket1[basket1.length] = arr;
+        localStorage.setItem("basket", JSON.stringify(basket1));
+
+        isInBasket();                         
+        countBasket();  
+    }  
+
+    function isInBasket(){
+        let basket1 = localStorage.getItem("basket");
+        if(basket1){
+            basket1 = JSON.parse(basket1);
+        }
+        else{
+            basket1 = [];
+        }
+
+        for(let i=0;i<basket1.length;i++){
+            if(basket1 == arr){
+                document.querySelector(".alreadyInBasket").style.display = "block";
+                document.querySelector(".btn__addtobasket").style.display = "none";
+                console.log(4654);
+                break;
+            }
+        }
+
+        if(basket1.length == 0){
+            document.querySelector(".alreadyInBasket").style.display = "none";
+                document.querySelector(".btn__addtobasket").style.display = "block";
+        }
+       
+    }
+    isInBasket();
+
 
 </script>
 
@@ -123,6 +162,53 @@
 
 </script>
 
+<style>
+    /* .alreadyInBasket{
+
+margin-top: 50px;
+    } */
+
+    .btn__addtobasket,
+.alreadyInBasket{
+    margin-top: 229px;
+
+    cursor: pointer;
+
+    max-width: 300px;
+
+    width: 100%;
+    height: 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 10px;
+
+    user-select: none;
+
+    border: 1px solid black;
+    border-radius: 0;
+
+    font-size: 15px;
+    font-weight: 700;
+    font-family:  Helvetica, Arial, sans-serif;
+
+    /* display: block; */
+}
+
+.btn__addtobasket{
+    display: block;
+    background-color: black;
+    color: white;
+}
+.alreadyInBasket{
+    display: none;
+    background-color: white;
+    color: black;
+}
+</style>
 
 <?php
     require "footer.php";

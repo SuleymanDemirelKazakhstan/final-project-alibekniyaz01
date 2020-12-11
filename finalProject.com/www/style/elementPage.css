@@ -89,7 +89,8 @@
     margin-top: 50px;
 }
 
-.btn__addtobasket{
+.btn__addtobasket,
+.alreadyInBasket{
     margin-top: 229px;
 
     cursor: pointer;
@@ -115,7 +116,56 @@
     font-size: 15px;
     font-weight: 700;
     font-family:  Helvetica, Arial, sans-serif;
+
+    /* display: block; */
 }
+
+.btn__addtobasket{
+    display: block;
+}
+.alreadyInBasket{
+    display: none;
+}
+
+#bas{
+    margin-right: 50px;
+}
+
+/* ================================== */
+
+
+/* .alreadyInBasket{
+
+    margin-top: 229px;
+
+    text-transform: uppercase;
+
+    max-width: 300px;
+
+    width: 100%;
+    height: 45px;
+
+    border: 1px solid black;
+    border-radius: 0;
+
+    background-color: white;
+    color: black;
+
+    font-size: 15px;
+    font-weight: 700;
+    font-family:  Helvetica, Arial, sans-serif;
+
+    text-align: center;
+
+
+    padding: 0 10px;
+    padding-top: 10px;
+
+    display: none;
+} */
+
+
+/* ======================================== */
 
 .btn__addtobasket:hover{
     background-color: white;

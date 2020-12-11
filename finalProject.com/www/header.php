@@ -28,8 +28,8 @@
                 <nav class="nav">
         
 
-                    <div class="basket__icon">
-                         <a href="#"><img onclick="" src="./ima/basket.png">
+                    <div class="basket__icon" onclick="openBasket()">
+                         <a href="#"><img  src="./ima/basket.png">
                             <div class="count__basket">0</div>
                         </a>
                     </div>
@@ -43,8 +43,49 @@
         </div>
     </header>
 
+<?php
+    require "basket.php";
+?>
+
 <script defer>
+    countBasket();
+    function countBasket(){
+        
+        let json = localStorage.getItem("basket");
+
+
+        if(json){
+            json = JSON.parse(json);
+        }
+        else{
+            json = [];
+        }
+
+        if(json.length > 9){
+            document.querySelector(".count__basket").innerHTML = json.length + "+";
+        }
+        else{
+            document.querySelector(".count__basket").innerHTML = json.length;
+        }
+    }
+
+
+
+
+
     function openMain(event){
         window.location.href = "/";
+    }
+
+    function openBasket(){
+        document.querySelector(".basketContainer").style.display = "flex";
+        document.querySelector("body").style.overflow = "hidden";
+        showBasket();
+
+    }
+
+    function closeBasket(){
+        document.querySelector(".basketContainer").style.display = "none";
+        document.querySelector("body").style.overflow = "auto";
     }
 </script>
