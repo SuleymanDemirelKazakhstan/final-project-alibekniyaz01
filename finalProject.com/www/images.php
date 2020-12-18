@@ -1,12 +1,14 @@
 <?php
-	$mysqli = new mysqli("localhost", 'root', '', 'adidas');
-	mysql_set_charset('utf8');
-	$myArray = array();
-	if ($a = $mysqli->query("SELECT * FROM images")) {
-	    while($row = $a->fetch_array(MYSQLI_ASSOC)) {
-	        $myArray[] = $row;
-	    }
-	    $arr = json_encode($myArray);
-	    echo $arr;
+	require "connect.php";
+
+	$result = mysqli_query($connection,"SELECT * FROM 	images");
+
+	$array = array();
+
+	while($res = mysqli_fetch_assoc($result)){
+		$array[] = $res;
 	}
+
+	$jsonText = json_encode($array);
+	echo $jsonText;
 ?>

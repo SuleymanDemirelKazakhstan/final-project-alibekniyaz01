@@ -119,7 +119,7 @@
 
                                                     <div class="nameOfProduct">`+data[i]['name']+`</div>
 
-                                                    <div class="priceOfProduct"> $<span id="priceOfProduct">`+data[i]['price']+`</span></div>
+                                                    <div class="priceOfProduct"> $<span id="priceOfProduct">17000</span></div>
 
                                                 </div>
                                             </a>
@@ -147,7 +147,7 @@
 
                                                     <div class="nameOfProduct">`+data[i]['name']+`</div>
 
-                                                    <div class="priceOfProduct"> $<span id="priceOfProduct">`+data[i]['price']+`</span></div>
+                                                    <div class="priceOfProduct"> $<span id="priceOfProduct">17000</span></div>
 
                                                 </div>
                                             </a>
@@ -173,7 +173,7 @@
 
                                                     <div class="nameOfProduct">`+data[i]['name']+`</div>
 
-                                                    <div class="priceOfProduct"> $<span id="priceOfProduct">`+data[i]['price']+`</span></div>
+                                                    <div class="priceOfProduct"> $<span id="priceOfProduct">17000</span></div>
 
                                                 </div>
                                             </a>
@@ -237,8 +237,7 @@
                                     break;
                                 }
 
-                            }
-                        }
+                            }}
 
                         $result = mysqli_query($connection, "SELECT * FROM `products`");
                         

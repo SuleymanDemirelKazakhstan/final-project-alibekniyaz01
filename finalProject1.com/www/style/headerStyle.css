@@ -144,13 +144,8 @@ body{
     color: white;
 }
 
-.plusSpan,
-.minusSpan{
-    display: none;
-}
-
 @media screen and (max-width: 500px){
-    .post_an_ad .span{
+    .post_an_ad span{
         display: none;
     }
     .post_an_ad{
@@ -160,13 +155,6 @@ body{
     .btn{
         margin-right: -50px;
     }
-
-    .plusSpan,
-.minusSpan{
-    display: inherit;
-}
-
-
 }
 
 @media screen and (max-width: 1200px){

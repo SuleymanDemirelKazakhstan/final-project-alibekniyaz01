@@ -1,0 +1,43 @@
+.container{
+    width: 100%;
+    max-width: 1200px;
+    
+    margin: 0px auto;
+}
+
+.editElement{
+    border: 2px solid black;
+    height: 200px;
+    max-width: 600px;
+
+    display: flex;
+
+
+    margin: 20px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img__editElement{
+    height: 195px;
+    margin-right: 20px;
+}
+
+.img__editElement img{
+    height: 100%;
+}
+.btn__editElement{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px){
+    .editElement{
+    margin-right: 10px;
+    margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 540px){
+    .info__element{
+        font-size: 10px;
+    }
+}   

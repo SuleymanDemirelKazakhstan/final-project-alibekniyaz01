@@ -62,7 +62,7 @@
     let basket = localStorage.getItem('basket');
     let id = <?php echo $res['id'];?>
 
-         
+            // console.log(id);
 
     if(basket){
         basket = JSON.parse(basket);
@@ -94,8 +94,13 @@
     function  addBasket(event){
         let basket1 = localStorage.getItem('basket');
 
+     
+
+       
+
         document.querySelector(".alreadyInBasket").style.display = "block";
         document.querySelector(".btn__addtobasket").style.display = "none";
+        // console.log();
 
         if (basket1) {
            basket1 = JSON.parse(basket1);
@@ -113,7 +118,6 @@
 
     function isInBasket(){
         let basket1 = localStorage.getItem("basket");
-
         if(basket1){
             basket1 = JSON.parse(basket1);
         }
@@ -121,18 +125,18 @@
             basket1 = [];
         }
 
-
         for(let i=0;i<basket1.length;i++){
-            if(basket1[i]["id"] == id){
+            if(basket1 == arr){
                 document.querySelector(".alreadyInBasket").style.display = "block";
                 document.querySelector(".btn__addtobasket").style.display = "none";
+                console.log(4654);
                 break;
             }
         }
 
         if(basket1.length == 0){
             document.querySelector(".alreadyInBasket").style.display = "none";
-            document.querySelector(".btn__addtobasket").style.display = "block";
+                document.querySelector(".btn__addtobasket").style.display = "block";
         }
        
     }
@@ -159,11 +163,14 @@
 </script>
 
 <style>
+    /* .alreadyInBasket{
 
-.btn__addtobasket,
+margin-top: 50px;
+    } */
+
+    .btn__addtobasket,
 .alreadyInBasket{
     margin-top: 229px;
-    margin-bottom: 30px;
 
     cursor: pointer;
 
@@ -188,6 +195,7 @@
     font-weight: 700;
     font-family:  Helvetica, Arial, sans-serif;
 
+    /* display: block; */
 }
 
 .btn__addtobasket{

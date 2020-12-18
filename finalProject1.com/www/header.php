@@ -17,6 +17,8 @@
 
 
 <body>
+    <!-- <div class="mainPage"> -->
+
     <header class="header">
         <div class="container">
             <div class="header__inner">
@@ -32,8 +34,8 @@
                         </a>
                     </div>
 
-                    <a href="/addingPage.php" class="post_an_ad"><span class="span">ADD</span> <span class="plusSpan">+</span></a>
-                    <a href="/editElementList.php" class="post_an_ad"><span class="span">DELETE</span> <span class="minusSpan">-</span> </a>
+
+                    <a href="#" class="post_an_ad">+ <span>EDIT</span> </a>
                     
                 </nav>
 
@@ -60,7 +62,7 @@
         }
 
         if(json.length > 9){
-            document.querySelector(".count__basket").innerHTML = 9 + "+";
+            document.querySelector(".count__basket").innerHTML = json.length + "+";
         }
         else{
             document.querySelector(".count__basket").innerHTML = json.length;
@@ -73,44 +75,17 @@
 
     function openMain(event){
         window.location.href = "/";
-        isInBasket();
     }
 
     function openBasket(){
         document.querySelector(".basketContainer").style.display = "flex";
         document.querySelector("body").style.overflow = "hidden";
         showBasket();
-        countBasket();
+
     }
 
     function closeBasket(){
-        
         document.querySelector(".basketContainer").style.display = "none";
         document.querySelector("body").style.overflow = "auto";
-        countBasket();
-
-        isInBasket();
-        window.location.href = "/";
     }
 </script>
-
-<style>
-    
-    .plusSpan,
-    .minusSpan{
-        display: none;
-    }
-
-    @media screen and (max-width: 500px){
-        .plusSpan,
-        .minusSpan{
-            display: inherit;
-        }
-    }
-
-
-    .post_an_ad{
-        margin-left:10px;
-    }
-
-</style>

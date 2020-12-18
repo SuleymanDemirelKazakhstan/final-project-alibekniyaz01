@@ -21,13 +21,13 @@
 
 <style>
     .basketContainer{
-    
     width: 100%;
     height: 100vh;
 
     display: none;
     justify-content: flex-end;
 
+    /* border: 2px solid blue; */
 
     position: absolute;
 
@@ -38,12 +38,9 @@
     .Basket__Section{
         background-color: white;
         overflow: auto;
-        width: 100%;
     }
 
 </style>
-
-
 
 <script defer>
 
@@ -62,15 +59,15 @@
     }
 
     function removeItem(event) {
-        
+        // console.log(event.parentNode);
+
+        // event.parentNode.classList.remove("item__container");
+        // event.parentNode.innerHTML = "";
 
         let id = event.querySelector("input").value;
-
         let basket = localStorage.getItem('basket');
 
         basket = JSON.parse(basket);
-
-
 
         let json = [];
 
@@ -88,10 +85,11 @@
 
         }
 
+
         showBasket();
         countTotal();
-        countBasket();
         isInBasket();
+        countBasket();
     }
 
     showBasket();
@@ -109,22 +107,23 @@
         let template = "";
 
         for(let i=0;i<basket.length;i++){
+            // console.log(basket[i]);
             template += `
                 <div class="item__container">
 
-                    <div class="remove__item" onclick="removeItem(this)">&#88; <input type="hidden" value = "`+ basket[i]["id"] +`"></div>
+                <div class="remove__item" onclick="removeItem(this)">&#88; <input type="hidden" value = "`+ basket[i]["id"] +`"></div>
 
-                    <img class="item__Img"
-                        src="`+ basket[i]["image"] +`">
+                <img class="item__Img"
+                    src="`+ basket[i]["image"] +`">
 
-                    <div class="item__content">
-                        <div class="item__name">`+  basket[i]["name"] +`</div>
-                        <div class="item__price">$ <span id="item__price">`+  basket[i]["price"] +`</span> </div>
-                    </div>
+                <div class="item__content">
+                    <div class="item__name">`+  basket[i]["name"] +`</div>
+                    <div class="item__price">$ <span id="item__price">`+  basket[i]["price"] +`</span> </div>
+                </div>
 
                 </div>`;
         }
-       
+        // console.log(basket.length);
 
         document.querySelector(".cards").innerHTML = template;
         countTotal();
@@ -132,4 +131,5 @@
     }
 
     countTotal();
+
 </script>
